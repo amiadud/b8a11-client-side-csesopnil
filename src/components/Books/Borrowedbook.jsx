@@ -60,7 +60,7 @@ const Borrowedbook = () => {
       <th>Category</th>
       <th>Borrow Date</th>
       <th>Return Date</th>
-      <th>Actio</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
