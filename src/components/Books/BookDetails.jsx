@@ -29,11 +29,6 @@ const BookDetails = () => {
     console.log(qBooks);
 
 
-    const handleReadButton = (_id) => {
-      
-      
-    }
-
     const AddToBorrow = (event)=>{
       event.preventDefault();
       const form = event.target
@@ -106,17 +101,22 @@ const BookDetails = () => {
                    
                     <button onClick={() => setShowModal(true)} className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 text-white' disabled={bookdata?.qBooks === 0}>Borrow</button >
                     
-                    <Link to={`/read-book/${bookdata._id}`}> <button onClick={handleReadButton} className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 text-white'>Read</button></Link>
+                    <Link to={`/read-book/${bookdata._id}`}> <button className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 text-white'>Read</button></Link>
                     </div>
                 </div>
             </div>
-            <div className=' col-span-3 space-y-1  '>
+            <div className=' col-span-3 space-y-3 '>
                 <h2 className='text-3xl'>{bookdata?.bookName}</h2>
                 <div className='md:flex gap-3 items-center'>
-                <p className='text-lg '>By: <span className='font-semibold'>{bookdata?.author_name}</span></p>
-                <h2>Quantity: {bookdata?.qBooks}</h2>
+                <p className='text-base '>Author Name: <span className='font-semibold'>{bookdata?.author_name}</span></p>
                 </div>
-                <Rating className='rating' name="rating " defaultValue={bookdata?.ratings} precision={0.5} readOnly />
+                <hr />
+               <div className='flex gap-3'>
+               <Rating className='rating' name="rating " defaultValue={bookdata?.ratings} precision={0.5} readOnly />
+               <h2>Category: <Link to={`/books/${bookdata?.bookCategory}`}><span className=' hover:link-primary'>{bookdata?.bookCategory}</span></Link></h2>
+               </div>
+               <hr />
+               <h2 >Quantity: {bookdata?.qBooks}</h2>
             </div>
 
         </div>

@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Header = () => {
+
+  const navigate = useNavigate()
 
   const {user, logoutUser} = useAuth()
 
@@ -37,7 +41,7 @@ const handleLogout = ()=> {
     }
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">BookStore</a>
+    <a className="btn btn-ghost normal-case text-xl">Library</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -55,6 +59,7 @@ const handleLogout = ()=> {
     </ul>
   </div>
   <div className="navbar-end">
+  <span className='mx-5 '>{user?.displayName }</span> 
   {
     user? <>
     <div className="dropdown dropdown-end">
@@ -78,6 +83,7 @@ const handleLogout = ()=> {
       
     }
   </div>
+  <ToastContainer/>
 </div>
     );
 };

@@ -14,6 +14,7 @@ import Home from '../pages/Home/Home';
 import ReadBook from '../pages/ReadBook/ReadBook';
 import PrivateRoutes from './PrivateRoutes';
 import ErrorPage from '../pages/ErrorPage/ErrorPage';
+import Register from '../pages/Register/Register';
 
 const Routes = createBrowserRouter([
     {
@@ -44,7 +45,7 @@ const Routes = createBrowserRouter([
             loader:({params})=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/books/${params?.cname}`)
         },
         {
-            path: '/books-details/:id',
+            path: '/book-details/:id',
             element:<PrivateRoutes><BookDetails/></PrivateRoutes>,
             errorElement:<ErrorPage/>,
             loader:({params})=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/book-details/${params?.id}`)
@@ -65,12 +66,18 @@ const Routes = createBrowserRouter([
           path: '/login',
             element:<Login/>,
             errorElement:<ErrorPage/>,
+        },
+        {
+          path: '/register',
+            element:<Register/>,
+            errorElement:<ErrorPage/>,
         }
       ]
     },
     {
       path:"/read-book/:id",
-      element:<ReadBook/>
+      element:<ReadBook/>,
+      loader:({params})=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/book-details/${params.id}`)
     }
   ]);
 

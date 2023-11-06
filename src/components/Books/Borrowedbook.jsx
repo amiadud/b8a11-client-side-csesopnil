@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -47,6 +48,9 @@ const Borrowedbook = () => {
 
     return (
         <>
+             <Helmet>
+      <title>Borrowed Books List  | Library</title>
+    </Helmet>
         <div className="max-w-7xl mx-auto">
         <table width="100%" className="  md:text-white ">
   <thead className=" bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
@@ -63,12 +67,12 @@ const Borrowedbook = () => {
     {
       Data.length > 0 ?  Data.map( borrowed => 
       <tr className="border-b text-black transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-            <td ><Link to={`/books-details/${borrowed?.BookId}`}><img className="w-[50px] py-2" src={borrowed.BookPhoto} alt="" /></Link></td>
-            <td className="capitalize "><Link className="hover:text-emerald-600 " to={`/books-details/${borrowed?.BookId}`}>{borrowed?.bookName}</Link></td>
+            <td ><Link to={`/book-details/${borrowed?.BookId}`}><img className="w-[50px] py-2" src={borrowed.BookPhoto} alt="" /></Link></td>
+            <td className="capitalize "><Link className="hover:text-emerald-600 " to={`/book-details/${borrowed?.BookId}`}>{borrowed?.bookName}</Link></td>
             <td className="capitalize "><Link className="hover:text-emerald-600" to={`/books/${borrowed?.bookCategory}`}>{borrowed?.bookCategory}</Link></td>
             <td className="capitalize ">{borrowed?.borrowDate}</td>
             <td className="capitalize ">{borrowed?.returnDate}</td>
-            <td><button onClick={()=> handleBorrowDelete(borrowed)} className="btn outline-none hover:bg-red-600 hover:text-white">Return</button></td>
+            <td><button onClick={()=> handleBorrowDelete(borrowed)} className="btn outline-none hover:bg-gray-700 bg-red-600 text-white">Return</button></td>
           </tr> 
 
     )

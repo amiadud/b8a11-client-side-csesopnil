@@ -4,6 +4,7 @@ import Banner from '../../components/Banner/Banner';
 import axios from 'axios';
 import AllBooks from '../../components/Books/AllBooks';
 import HomeBooks from './HomeBooks';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
 
@@ -15,6 +16,9 @@ const Home = () => {
     
     return (
         <div className='max-w-7xl mx-auto'>
+            <Helmet>
+                <title>Latest Books in the World | Library Home Page </title>
+            </Helmet>
                   <Banner/>
         <div className='grid grid-cols-1 '>
             <div className='my-5'>

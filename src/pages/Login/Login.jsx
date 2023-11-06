@@ -6,10 +6,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useAuth from '../../hooks/useAuth';
 import SocialLogin from './SocialLogin';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
 
-  const {loginUse, loginUser} = useAuth()
+  const { loginUser} = useAuth()
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
 
@@ -22,8 +23,11 @@ const Login = () => {
     
     loginUser(email, password)
     .then(result => {
-      navigate("/")
-      toast.success("Login successfully!!");
+      setTimeout(() => {
+        navigate('/') 
+        
+      }, 200);
+      toast.success("Login successful!!")
       console.log(result.user);
     })
     .catch(err => {
@@ -34,6 +38,9 @@ const Login = () => {
 
     return (
         <div>
+               <Helmet>
+      <title>All Books and Available Book | Library</title>
+    </Helmet>
               <section className="">
       <div className="h-full">
         {/* <!-- Left column container with background--> */}

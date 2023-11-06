@@ -3,6 +3,7 @@ import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 const Addbook = () => {
 
@@ -22,8 +23,9 @@ const Addbook = () => {
     const rating = form.rating.value
     const ratings = parseFloat(rating)
     const photoUrl = form.photoUrl.value
+    const bookPDF = form.bookpdf.value
     const shortDes = form.shortDes.value
-    const bookData = {bookName, bookCategory, qBooks, author_name, ratings, photoUrl, shortDes}
+    const bookData = {bookName, bookCategory, qBooks, author_name, ratings, photoUrl,bookPDF, shortDes}
     console.log(bookData);
 
 try {
@@ -50,7 +52,12 @@ try {
 
   
   return (
+    <>
+    <Helmet>
+      <title>Add Book Data | Library</title>
+    </Helmet>
         <div className="max-w-7xl mx-auto">
+
             <div className=" mt-5 border outline-none rounded-lg  ">
   <div className=" flex-col py-2 my-5 ">
     <div className="text-center my-4 ">
@@ -108,6 +115,12 @@ try {
           </label>
           <textarea className="textarea textarea-bordered" name='shortDes' placeholder="Enter Short Details..."></textarea>
         </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text"> PDF URL</span>
+          </label>
+          <input type="text" placeholder="PDF URL" name='bookpdf' className="input input-bordered" required />
+        </div>
         <div className="form-control mt-6">
           <button className="btn btn-neutral capitalize text-lg">Add Book</button>
         </div>
@@ -117,6 +130,7 @@ try {
 </div>
 <ToastContainer/>
         </div>
+        </>
     );
 };
 

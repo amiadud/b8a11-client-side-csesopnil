@@ -1,21 +1,35 @@
 import { Rating } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllBooks = () => {
 
     const allbooks = useLoaderData()
-    console.log(allbooks);
+
+    const [Data, setData] = useState(allbooks)
+
+    const handleFilter = ()=> {
+        const reamings = Data.filter(data => data.qBooks > 0 )
+        setData(reamings);
+    }
 
     return (
-        <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-5 gap-2 my-4 '>
+        <>
+        <Helmet>
+      <title>All Books and Available Book | Library</title>
+    </Helmet>
+        <div className='flex justify-center'>
+        <button onClick={handleFilter} className='btn btn-sm '>Filter (Available books)</button>
+        </div>
+        <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
         
                         {
-                            allbooks.map(books => 
+                            Data.map(books => 
                                 <div className='border hover:shadow-none shadow-md rounded-md mt-4  '>
                                 <div className='hover:underline'>
-                                <Link to={`/books-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>
-                                <Link to={`/books-details/${books?._id}`}><h2 className='text-center scale-90 text-xl font-semibold'>{books?.bookName}</h2></Link>
+                                <Link to={`/book-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>
+                                <Link to={`/book-details/${books?._id}`}><h2 className='text-center scale-90 text-xl font-semibold'>{books?.bookName}</h2></Link>
                                 </div>
                                 <div className=' my-2 '>
                                 <div>
@@ -35,6 +49,7 @@ const AllBooks = () => {
                         }
                    
         </div>
+        </>
     );
 };
 
