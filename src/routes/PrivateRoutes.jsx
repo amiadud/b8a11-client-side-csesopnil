@@ -21,7 +21,7 @@ const PrivateRoutes = ({children}) => {
     return ( 
         toast.warning('Please login first!!'),
         <ToastContainer></ToastContainer>,
-    <Navigate state={location.pathname} to="/login"></Navigate>
+    <Navigate  to="/login"></Navigate>
     
     );
 };

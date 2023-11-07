@@ -33,10 +33,9 @@ const Routes = createBrowserRouter([
             errorElement:<ErrorPage/>
         },
         {
-            path: '/all-books',
+            path: '/all-books/',
             element:<PrivateRoutes><AllBooks/></PrivateRoutes>,
             errorElement:<ErrorPage/>,
-            loader:()=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/books/`)
         },
         {
             path: '/books/:cname',

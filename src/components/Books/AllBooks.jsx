@@ -1,17 +1,27 @@
 import { Rating } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const AllBooks = () => {
 
-    const allbooks = useLoaderData()
+    const { user } = useAuth()
 
-    const [Data, setData] = useState(allbooks)
+    const [allbooks, setAllbooks] = useState([])
+    console.log(allbooks);
+
+    useEffect(()=> {
+        fetch(`https://b8a11-server-side-csesopnil.vercel.app/books?email=${user?.email}`, {
+            credentials: "include"
+        })
+            .then(res => res.json())
+            .then(data => setAllbooks(data))
+    }, []);
 
     const handleFilter = ()=> {
-        const reamings = Data.filter(data => data.qBooks > 0 )
-        setData(reamings);
+        const reamings = allbooks.filter(data => data.qBooks > 0 )
+        setAllbooks(reamings);
     }
 
     return (
@@ -25,7 +35,7 @@ const AllBooks = () => {
         <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
         
                         {
-                            Data.map(books => 
+                            allbooks.map(books => 
                                 <div className='border hover:shadow-none shadow-md rounded-md mt-4  '>
                                 <div className='hover:underline'>
                                 <Link to={`/book-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>

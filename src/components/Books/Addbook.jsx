@@ -4,18 +4,24 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
+import useAuth from '../../hooks/useAuth';
 
 const Addbook = () => {
 
+  const { user } = useAuth()
+
   const [CategoryData, setCategoryData] = useState([''])
 
-  axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category')
+  axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category', {
+    withCredentials: true,
+  })
   .then(res => setCategoryData(res.data))
 
   const handleAddBook = (event) => {
     event.preventDefault();
     const form = event.target
     const bookName = form.bookName.value
+    const email = user.email
     const bookCategory = form.bookCategory.value
     const qBook = form.qBook.value
     const qBooks = parseInt(qBook)
@@ -25,7 +31,7 @@ const Addbook = () => {
     const photoUrl = form.photoUrl.value
     const bookPDF = form.bookpdf.value
     const shortDes = form.shortDes.value
-    const bookData = {bookName, bookCategory, qBooks, author_name, ratings, photoUrl,bookPDF, shortDes}
+    const bookData = {bookName, bookCategory, email, qBooks, author_name, ratings, photoUrl,bookPDF, shortDes}
     console.log(bookData);
 
 try {
