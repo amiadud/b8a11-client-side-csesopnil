@@ -39,6 +39,7 @@ try {
     headers: {
       'Content-Type': 'application/json',
     },
+    withCredentials: true,
   })
   .then(data => {
     form.reset()

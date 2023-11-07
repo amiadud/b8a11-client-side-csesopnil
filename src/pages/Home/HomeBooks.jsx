@@ -11,8 +11,7 @@ const HomeBooks = () => {
     console.log(allbooks);
 
     useEffect( ()=> {
-        fetch(`https://b8a11-server-side-csesopnil.vercel.app/books?email=${user?.email}`, {
-            credentials: "include"
+        fetch(`https://b8a11-server-side-csesopnil.vercel.app/all-books`, {
         })
         .then(res => res.json())
         .then(data => setAllbooks(data))

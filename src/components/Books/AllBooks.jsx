@@ -1,4 +1,5 @@
 import { Rating } from '@mui/material';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -6,15 +7,14 @@ import { Link, useLoaderData } from 'react-router-dom';
 const AllBooks = () => {
 
     const [allbooks, setAllbooks] = useState([])
-    console.log(allbooks);
 
-    useEffect(()=> {
+    useEffect( ()=> {
         fetch(`https://b8a11-server-side-csesopnil.vercel.app/books`, {
             credentials: "include"
         })
-            .then(res => res.json())
-            .then(data => setAllbooks(data))
-    }, []);
+        .then(res => res.json())
+        .then(data => setAllbooks(data))
+    },[])
 
     const handleFilter = ()=> {
         const reamings = allbooks.filter(data => data.qBooks > 0 )

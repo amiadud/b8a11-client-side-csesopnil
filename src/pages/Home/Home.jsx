@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import axios from 'axios';
-import AllBooks from '../../components/Books/AllBooks';
 import HomeBooks from './HomeBooks';
 import { Helmet } from 'react-helmet';
 
