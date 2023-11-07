@@ -14,6 +14,7 @@ import {
     TEModalFooter,
   } from "tw-elements-react";
 import useAuth from '../../hooks/useAuth';
+import { Helmet } from 'react-helmet';
 
 
 const BookDetails = () => {
@@ -91,11 +92,14 @@ const BookDetails = () => {
 
     return (
         <>
+        <Helmet>
+      <title>{bookdata?.bookName} | {bookdata?.author_name} | Library</title>
+    </Helmet>
         <div className='grid md:grid-cols-4 '>
             <div className=' flex justify-center items-center mr-8    mb-6'>
                 <div >
                     <div className='w-full mb-6 ml-0 md:ml-2 '>
-                    <img src={bookdata?.photoUrl} alt="" />
+                    <img src={bookdata?.photoUrl} alt={bookdata?.bookName} title={bookdata?.bookName} />
                     </div>
                     <div className='flex justify-center gap-4'>
                    
@@ -106,23 +110,23 @@ const BookDetails = () => {
                 </div>
             </div>
             <div className=' col-span-3 space-y-3 '>
-                <h2 className='text-3xl'>{bookdata?.bookName}</h2>
+                <h2 className='text-3xl dark:text-white'>{bookdata?.bookName}</h2>
                 <div className='md:flex gap-3 items-center'>
-                <p className='text-base '>Author Name: <span className='font-semibold'>{bookdata?.author_name}</span></p>
+                <p className='text-base dark:text-white'>Author Name: <span className='font-semibold'>{bookdata?.author_name}</span></p>
                 </div>
                 <hr />
                <div className='flex gap-3'>
                <Rating className='rating' name="rating " defaultValue={bookdata?.ratings} precision={0.5} readOnly />
-               <h2>Category: <Link to={`/books/${bookdata?.bookCategory}`}><span className=' hover:link-primary'>{bookdata?.bookCategory}</span></Link></h2>
+               <h2 className='dark:text-white'>Category: <Link to={`/books/${bookdata?.bookCategory}`}><span className=' hover:link-primary'>{bookdata?.bookCategory}</span></Link></h2>
                </div>
                <hr />
-               <h2 >Quantity: {bookdata?.qBooks}</h2>
+               <h2 className='dark:text-white' >Quantity: {bookdata?.qBooks}</h2>
             </div>
 
         </div>
         <div className='my-4'>
-                <h2 className='my-4 text-2xl font-semibold'>Book Overview</h2>
-                <p>{bookdata?.shortDes}</p>
+                <h2 className='my-4 text-2xl font-semibold dark:text-white'>Book Overview</h2>
+                <p className='dark:text-white'>{bookdata?.shortDes}</p>
             </div>
             <div>
 
@@ -133,7 +137,7 @@ const BookDetails = () => {
             <TEModalHeader>
               {/* <!--Modal title--> */}
               <h5 className="text-xl font-medium leading-normal text-neutral-800 dark:text-neutral-200">
-                Modal title
+                Borrowed Added Form
               </h5>
               {/* <!--Close button--> */}
               <button
@@ -160,25 +164,25 @@ const BookDetails = () => {
             </TEModalHeader>
             {/* <!--Modal body--> */}
             <TEModalBody>
-            <h2>Name: {user?.displayName}</h2>
-            <h2>Email: {user?.email}</h2>
+            <h2 className='dark:text-white'>Name: {user?.displayName}</h2>
+            <h2 className='dark:text-white'>Email: {user?.email}</h2>
             <form onSubmit={AddToBorrow } action="">
             <div className="form-control">
             <label className="label">
-              <span className="label-text">Borrowed Date</span>
+              <span className="label-text dark:text-white">Borrowed Date</span>
             </label>
             <input type="date" placeholder="Enter Name" name='borrowDate' className="input input-bordered" required />
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Return Date</span>
+              <span className="label-text dark:text-white">Return Date</span>
             </label>
             <input type="date" placeholder="Enter Name" name='returnDate' className="input input-bordered" required />
           </div>
           <div className='flex justify-end'>
           <button
                   type="submit"
-                  className=" mt-4 rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                  className=" mt-4 dark:hover:bg-slate-100 dark:border dark:hover:text-black rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 >
                   Borrowed
                 </button>
@@ -189,7 +193,7 @@ const BookDetails = () => {
               <TERipple rippleColor="light">
                 <button
                   type="button"
-                  className="inline-block rounded bg-primary-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
+                  className="inline-block dark:hover:bg-slate-100 dark:border dark:hover:text-black dark:text-white  rounded bg-primary-100 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary-700 transition duration-150 ease-in-out hover:bg-primary-accent-100 focus:bg-primary-accent-100 focus:outline-none focus:ring-0 active:bg-primary-accent-200"
                   onClick={() => setShowModal(false)}
                 >
                   Close

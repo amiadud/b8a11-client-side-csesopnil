@@ -22,15 +22,15 @@ const HomeBooks = () => {
         
                         {
                             availableData.map(books => 
-                                <div className='border hover:shadow-none shadow-md rounded-md mt-4  '>
+                                <div className='border hover:shadow-none  shadow-md rounded-md mt-4  '>
                                 <div className='hover:underline'>
                                 <Link to={`/book-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>
-                                <Link to={`/book-details/${books?._id}`}><h2 className='text-center scale-90 text-xl font-semibold'>{books?.bookName}</h2></Link>
+                                <Link to={`/book-details/${books?._id}`}><h2 className='text-center scale-90 text-xl font-semibold  dark:font-semibold  dark:text-white'>{books?.bookName}</h2></Link>
                                 </div>
                                 <div className=' my-2 '>
                                 <div>
-                                <h2 className='text-center '> <span className='font-semibold'>Category:</span> {books?.bookCategory}  </h2>
-                                <h2 className='text-center -mt-3 '><br /><span className='font-semibold'>Author Name</span> : {books?.author_name}</h2>
+                                <h2 className='text-center dark:text-white '> <span className='font-semibold'>Category:</span> {books?.bookCategory}  </h2>
+                                <h2 className='text-center -mt-3  dark:text-white'><br /><span className='font-semibold'>Author Name</span> : {books?.author_name}</h2>
                                 </div>
                                 </div>
                                 <div className='flex justify-center'>
@@ -45,20 +45,20 @@ const HomeBooks = () => {
                         }
                    
         </div>
-        <h2 className='text-center text-2xl pt-3 font-semibold'>Fantasy Books List</h2>
-        <p className='text-center mt-2'>Best of Fantasy Books.</p>
+        <h2 className='text-center text-2xl pt-3 font-semibold  dark:text-white'>Fantasy Books List</h2>
+        <p className='text-center mt-2  dark:text-white'>Best of Fantasy Books.</p>
         <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
                         {
                             fantacyBook.map(books => 
                                 <div className='border hover:shadow-none shadow-md rounded-md mt-4  '>
                                 <div className='hover:underline'>
                                 <Link to={`/book-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>
-                                <Link to={`/book-details/${books?._id}`}><h2 className='text-center scale-90 text-xl font-semibold'>{books?.bookName}</h2></Link>
+                                <Link to={`/book-details/${books?._id}`}><h2 className='  dark:text-white text-center scale-90 text-xl font-semibold'>{books?.bookName}</h2></Link>
                                 </div>
                                 <div className=' my-2 '>
                                 <div>
-                                <h2 className='text-center '> <span className='font-semibold'>Category:</span> {books?.bookCategory}  </h2>
-                                <h2 className='text-center -mt-3 '><br /><span className='font-semibold'>Author Name</span> : {books?.author_name}</h2>
+                                <h2 className='text-center  dark:text-white'> <span className='font-semibold'>Category:</span> {books?.bookCategory}  </h2>
+                                <h2 className='text-center -mt-3  dark:text-white'><br /><span className='font-semibold'>Author Name</span> : {books?.author_name}</h2>
                                 </div>
                                 </div>
                                 <div className='flex justify-center'>

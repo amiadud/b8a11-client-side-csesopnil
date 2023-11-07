@@ -56,7 +56,7 @@ const Login = () => {
           {/* <!-- Right column container --> */}
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
             <form onSubmit={handleLogin}>
-            <h2 className="text-4xl my-3 font-semibold"> Login Now!!</h2>
+            <h2 className="text-4xl my-3 font-semibold dark:text-white"> Login Now!!</h2>
               {/* <!-- Email input --> */}
               <TEInput
                 type="email"
@@ -87,7 +87,7 @@ const Login = () => {
                 </TERipple>
 
                 {/* <!-- Register link --> */}
-                <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
+                <p className="mb-0 mt-2 pt-1 text-sm font-semibold dark:text-white">
                   Don't have an account?{" "}
                   <Link to='/register' className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">Register</Link>
                 </p>

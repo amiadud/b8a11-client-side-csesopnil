@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../Header/Header.css'
+import { useTheme } from '../../hooks/useTheme';
+import { MdLightMode, MdDarkMode } from 'react-icons/md';
 
 const Header = () => {
 
   const navigate = useNavigate()
 
   const {user, logoutUser} = useAuth()
+  
+  const { mode, changeTheme } = useTheme()
 
 const handleLogout = ()=> {
   logoutUser()
@@ -20,32 +25,31 @@ const handleLogout = ()=> {
   })
   .catch(error => console.error(error))
 }
-    
 
     return (
-        <div className="navbar bg-base-100">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <label tabIndex={0} className="btn btn-ghost lg:hidden">
+        <div className="navbar bg-base-100 mb-3 dark:border dark:bg-slate-800 dark:shadow-md rounded-md dark:rounded-md">
+  <div className="navbar-start ">
+    <div className="dropdown ">
+      <label tabIndex={0} className="btn btn-ghost lg:hidden dark:btn-secondary  ">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-      <li className='mr-2'><NavLink to="/">Home</NavLink></li>
+      <ul tabIndex={0} className="menu dark:bg-zinc-500 dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52">
+      <li className='mr-2 dark:text-white  '><NavLink to="/">Home</NavLink></li>
       {
       user ? <>
-    <li className='mr-2'><NavLink to="/add-book">Add Book</NavLink></li>
-    <li className='mr-2'><NavLink to="/all-books">All Books</NavLink></li>
-    <li className='mr-2'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
+    <li className='mr-2 dark:text-white'><NavLink to="/add-book">Add Book</NavLink></li>
+    <li className='mr-2 dark:text-white'><NavLink to="/all-books">All Books</NavLink></li>
+    <li className='mr-2 dark:text-white'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
     </>
     : <></>
     }
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">Library</a>
+    <img className='w-36 ml-2 md:ml-2 dark:bg-white' src="./img/library_logo.png" alt="" />
   </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-    <li className='mr-2'><NavLink to="/">Home</NavLink></li>
+  <div className="navbar-center  hidden lg:flex dark:text-white">
+    <ul className="menu menu-horizontal  px-1">
+    <li className='mr-2 '><NavLink to="/">Home</NavLink></li>
 
     {
       user ? <>
@@ -59,7 +63,7 @@ const handleLogout = ()=> {
     </ul>
   </div>
   <div className="navbar-end">
-  <span className='mx-5 '>{user?.displayName }</span> 
+  <span className='mx-5 dark:text-white '>{user?.displayName }</span> 
   {
     user? <>
     <div className="dropdown dropdown-end">
@@ -83,6 +87,9 @@ const handleLogout = ()=> {
       
     }
   </div>
+  <button onClick={changeTheme}>
+     { mode === 'dark' ? <MdDarkMode className='text-2xl ml-2'/> :  <MdLightMode className='text-2xl ml-2' />  }
+</button>
   <ToastContainer/>
 </div>
     );

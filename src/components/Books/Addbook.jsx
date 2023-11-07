@@ -56,25 +56,25 @@ try {
     <Helmet>
       <title>Add Book Data | Library</title>
     </Helmet>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto ">
 
-            <div className=" mt-5 border outline-none rounded-lg  ">
+            <div className=" mt-5 border dark:border-none outline-none rounded-lg  ">
   <div className=" flex-col py-2 my-5 ">
     <div className="text-center my-4 ">
-      <h1 className="text-5xl font-bold text-center my-4">Add New Product</h1>
+      <h1 className="text-5xl font-bold text-center my-4 dark:text-white">Add New Product</h1>
     </div>
-    <div className="card  w-full  bg-base-100">
-      <form onSubmit={handleAddBook} className="card-body">
+    <div className="card dark:bg-slate-800 dark:border dark:shadow-md  w-full  bg-base-100">
+      <form onSubmit={handleAddBook} className="card-body ">
         <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-4'>
         <div className="form-control">
           <label className="label">
-            <span className="label-text"> Name</span>
+            <span className="label-text dark:text-white"> Name</span>
           </label>
           <input type="text" placeholder="Enter Name" name='bookName' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Book Category</span>
+            <span className="label-text dark:text-white">Book Category</span>
           </label>
             <select className='input input-bordered' name="bookCategory" id="">
             {
@@ -86,43 +86,43 @@ try {
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Quantity of the book</span>
+            <span className="label-text dark:text-white">Quantity of the book</span>
           </label>
           <input type="number" placeholder="Enter Quantity.." name='qBook' className="input input-bordered outline-none" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Author Name</span>
+            <span className="label-text dark:text-white">Author Name</span>
           </label>
           <input type="text" placeholder="Author Name..." name='author_name' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text"> Photo URL</span>
+            <span className="label-text dark:text-white"> Photo URL</span>
           </label>
           <input type="text" placeholder="Enter Photo URL" name='photoUrl' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Rating</span>
+            <span className="label-text dark:text-white">Rating</span>
           </label>
-            <Rating className='rating' name="rating" defaultValue={1} precision={0.5} size="large" />
+            <Rating className='rating ' name="rating" defaultValue={1} precision={0.5} size="large" />
         </div>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Short Description</span>
+            <span className="label-text dark:text-white">Short Description</span>
           </label>
           <textarea className="textarea textarea-bordered" name='shortDes' placeholder="Enter Short Details..."></textarea>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text"> PDF URL</span>
+            <span className="label-text dark:text-white"> PDF URL</span>
           </label>
           <input type="text" placeholder="PDF URL" name='bookpdf' className="input input-bordered" required />
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-neutral capitalize text-lg">Add Book</button>
+          <button className="btn btn-neutral capitalize text-lg dark:bg-slate-100 dark:text-black dark:outline-none dark:border-none">Add Book</button>
         </div>
       </form>
     </div>

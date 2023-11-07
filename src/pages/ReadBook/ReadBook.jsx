@@ -18,16 +18,16 @@ const ReadBook = () => {
         <div className='max-w-7xl mx-auto'>
             <div className='flex items-center justify-between'>
             <div>
-            <h2 className='text-xl md:text-3xl  font-medium'>{bookName}</h2>
-            <p className='text-lg md:text-xl'>By {author_name}</p>
+            <h2 className='text-xl md:text-3xl  font-medium dark:text-white'>{bookName}</h2>
+            <p className='text-lg md:text-xl dark:text-white'>By {author_name}</p>
             </div>
-            <div>
+            <div className='dark:text-white'>
             <Link to="/">Back to Home</Link>
             </div>
             </div>
             <div>
-            <object className='w-full md:w-full h-screen md:h-screen' data={bookPDF} type="application/pdf" ></object>
-            <p className='py-2 text-lg'>Unable to display PDF file. <a className='hover:link-warning' href={bookPDF}>Download</a> instead.</p>
+            <object className='w-full  md:w-full h-screen md:h-screen' data={bookPDF} type="application/pdf" ></object>
+            <p className='py-2 dark:text-white text-lg'>Unable to display PDF file. <a className='hover:link-warning' href={bookPDF}>Download</a> instead.</p>
             </div>
             
         </div>
