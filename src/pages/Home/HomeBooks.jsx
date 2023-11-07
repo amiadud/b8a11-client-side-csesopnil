@@ -4,7 +4,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const HomeBooks = () => {
     
-    const [allbooks, setAllbooks] = useState([])
+    const [allbooks, setAllbooks] = useState([''])
     console.log(allbooks);
 
     useEffect( ()=> {

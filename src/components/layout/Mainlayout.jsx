@@ -5,7 +5,7 @@ import Footer from '../Footer/Footer';
 
 const Mainlayout = () => {
     return (
-        <div className='max-w-7xl mx-auto dark:bg-slate-800'>
+        <div className='max-w-7xl mx-auto text-black dark:bg-slate-800'>
             <Header/>
             <Outlet/>
             <Footer/>

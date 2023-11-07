@@ -54,7 +54,7 @@ const Borrowedbook = () => {
         <div className="max-w-7xl mx-auto">
         <table width="100%" className="  md:text-white ">
   <thead className=" bg-white text-black font-medium dark:text-white dark:border-neutral-500 dark:bg-neutral-800">
-    <tr className=" border dark:border-none ">
+    <tr className=" border bg-slate-800 dark:bg-white dark:text-black text-white dark:border-none ">
       <th className=" py-2 "> Image</th>
       <th>Name</th>
       <th>Category</th>
@@ -66,7 +66,7 @@ const Borrowedbook = () => {
   <tbody>
     {
       Data.length > 0 ?  Data.map( borrowed => 
-      <tr className="border-b text-black dark:text-white transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+      <tr className="border-b text-black dark:text-black transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 border-t-2  dark:bg-white">
             <td ><Link to={`/book-details/${borrowed?.BookId}`}><img className="w-[50px] py-2" src={borrowed.BookPhoto} alt="" /></Link></td>
             <td className="capitalize "><Link className="hover:text-emerald-600 " to={`/book-details/${borrowed?.BookId}`}>{borrowed?.bookName}</Link></td>
             <td className="capitalize "><Link className="hover:text-emerald-600" to={`/books/${borrowed?.bookCategory}`}>{borrowed?.bookCategory}</Link></td>

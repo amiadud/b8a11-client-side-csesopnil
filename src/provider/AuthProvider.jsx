@@ -1,6 +1,7 @@
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, linkWithCredential, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/firebase.config';
+import axios from 'axios';
 
 export const AuthContext = createContext(null)
 
@@ -54,9 +55,26 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=> {
         const unSubscribe =  onAuthStateChanged(auth, currentUser =>{
-            setLoading(false);
             setUser(currentUser)
-
+            const userEmail = currentUser?.email || user?.email;
+            const loggedUser = {email: userEmail}
+            setLoading(false);
+            // if user exists then issue a taken
+            if(currentUser){
+               
+                axios.post('https://b8a11-server-side-csesopnil.vercel.app/jwt', loggedUser, {
+                    withCredentials:true })
+                    .then(res => {
+                        console.log( 'token response',res.data);
+                    })
+            }           
+            else {
+                axios.post('https://b8a11-server-side-csesopnil.vercel.app/logout', loggedUser, 
+                { withCredentials:true })
+                .then(res => {
+                    console.log(res.data);
+                })
+            }
             
           })
 

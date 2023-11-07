@@ -33,11 +33,11 @@ const handleLogout = ()=> {
       <label tabIndex={0} className="btn btn-ghost lg:hidden dark:btn-secondary  ">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className="menu dark:bg-zinc-500 dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52">
-      <li className='mr-2 dark:text-white  '><NavLink to="/">Home</NavLink></li>
+      <ul tabIndex={0} className="menu bg-white dark:bg-zinc-500 dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52">
+      <li className='mr-2 dark:text-white '><NavLink to="/">Home</NavLink></li>
       {
       user ? <>
-    <li className='mr-2 dark:text-white'><NavLink to="/add-book">Add Book</NavLink></li>
+    <li className='mr-2  dark:hover:text-white'><NavLink to="/add-book">Add Book</NavLink></li>
     <li className='mr-2 dark:text-white'><NavLink to="/all-books">All Books</NavLink></li>
     <li className='mr-2 dark:text-white'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
     </>
@@ -49,13 +49,13 @@ const handleLogout = ()=> {
   </div>
   <div className="navbar-center  hidden lg:flex dark:text-white">
     <ul className="menu menu-horizontal  px-1">
-    <li className='mr-2 '><NavLink to="/">Home</NavLink></li>
+    <li className='mr-2 border rounded-lg dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-md'><NavLink to="/">Home</NavLink></li>
 
     {
       user ? <>
-    <li className='mr-2'><NavLink to="/add-book">Add Book</NavLink></li>
-    <li className='mr-2'><NavLink to="/all-books">All Books</NavLink></li>
-    <li className='mr-2'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
+    <li className='mr-2 border rounded-lg dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-md'><NavLink to="/add-book">Add Book</NavLink></li>
+    <li className='mr-2 border dark:outline-none dark:border-none rounded-lg dark:text-black dark:bg-slate-50 dark:rounded-md'><NavLink to="/all-books">All Books</NavLink></li>
+    <li className='mr-2 border rounded-lg dark:text-black dark:bg-slate-50 dark:rounded-md'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
     </>
     : <></>
     }
@@ -81,7 +81,7 @@ const handleLogout = ()=> {
       <a onClick={handleLogout} className="btn btn-sm capitalize hover:bg-orange-600 hover:text-white">Log Out</a>
       </>
       : <>
-      <NavLink to="/login" className="btn btn-sm ">Login</NavLink>
+      <NavLink to="/login" className="btn capitalize btn-sm dark:border-none text-black dark:bg-primary bg-cyan-200 dark:text-white">Login</NavLink>
       
       </>
       

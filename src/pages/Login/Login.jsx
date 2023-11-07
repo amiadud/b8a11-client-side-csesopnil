@@ -24,7 +24,7 @@ const Login = () => {
     loginUser(email, password)
     .then(result => {
       setTimeout(() => {
-        navigate('/') 
+        // navigate('/') 
         
       }, 200);
       toast.success("Login successful!!")
