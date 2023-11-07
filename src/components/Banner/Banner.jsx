@@ -12,7 +12,7 @@ const Banner = () => {
     <div>
       <h1 className="text-5xl font-bold dark:text-white">Find Exclusive Range of Books!</h1>
       <div >
-      <Link to="/all-books"><button className=" mt-5 py-3 rounded-md text-white px-4 text-sm bg-violet-700 outline-none">All Book</button></Link>
+      <Link to="/all-books"><button className=" dark:bg-slate-100 dark:text-black mt-5 py-3 rounded-md text-white px-4 text-sm bg-violet-700 outline-none">All Book</button></Link>
       </div>
     </div>
   </div>

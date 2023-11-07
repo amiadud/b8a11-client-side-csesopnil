@@ -88,7 +88,7 @@ const handleLogout = ()=> {
     }
   </div>
   <button onClick={changeTheme}>
-     { mode === 'dark' ? <MdDarkMode className='text-2xl ml-2'/> :  <MdLightMode className='text-2xl ml-2' />  }
+     { mode === 'dark' ? <MdDarkMode className='text-2xl ml-2 dark:text-white'/> :  <MdLightMode className='text-2xl ml-2' />  }
 </button>
   <ToastContainer/>
 </div>

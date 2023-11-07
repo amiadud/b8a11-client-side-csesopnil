@@ -53,9 +53,9 @@ const Borrowedbook = () => {
     </Helmet>
         <div className="max-w-7xl mx-auto">
         <table width="100%" className="  md:text-white ">
-  <thead className=" bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
-    <tr className="text-white ">
-      <th className=" py-2"> Image</th>
+  <thead className=" bg-white text-black font-medium dark:text-white dark:border-neutral-500 dark:bg-neutral-800">
+    <tr className=" border dark:border-none ">
+      <th className=" py-2 "> Image</th>
       <th>Name</th>
       <th>Category</th>
       <th>Borrow Date</th>
