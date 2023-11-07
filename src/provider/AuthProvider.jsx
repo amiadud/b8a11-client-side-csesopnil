@@ -55,9 +55,9 @@ const AuthProvider = ({children}) => {
 
     useEffect(()=> {
         const unSubscribe =  onAuthStateChanged(auth, currentUser =>{ 
-            setUser(currentUser) 
             const userEmail = currentUser?.email || user?.email;
             const loggedUser = {email: userEmail}
+            setUser(currentUser) 
             setLoading(false);
             // if user exists then issue a taken
             if(currentUser){

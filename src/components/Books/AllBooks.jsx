@@ -2,17 +2,14 @@ import { Rating } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
 
 const AllBooks = () => {
-
-    const { user } = useAuth()
 
     const [allbooks, setAllbooks] = useState([])
     console.log(allbooks);
 
     useEffect(()=> {
-        fetch(`https://b8a11-server-side-csesopnil.vercel.app/books?email=${user?.email}`, {
+        fetch(`https://b8a11-server-side-csesopnil.vercel.app/books`, {
             credentials: "include"
         })
             .then(res => res.json())

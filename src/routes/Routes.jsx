@@ -29,7 +29,7 @@ const Routes = createBrowserRouter([
         },
         {
             path: '/add-book',
-            element:<Addbook/>,
+            element:<PrivateRoutes><Addbook/></PrivateRoutes>,
             errorElement:<ErrorPage/>
         },
         {
