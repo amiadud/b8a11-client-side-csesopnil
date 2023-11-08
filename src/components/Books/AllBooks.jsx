@@ -38,13 +38,11 @@ const AllBooks = () => {
                                 <Link to={`/book-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>
                                 <Link to={`/book-details/${books?._id}`}><h2 className='text-center scale-90 text-xl dark:text-white font-semibold'>{books?.bookName}</h2></Link>
                                 </div>
-                                <div className=' my-2 '>
                                 <div>
-                                <h2 className='text-center dark:text-white'> <span className='font-semibold '>Category:</span> {books?.bookCategory}  </h2>
                                 <h2 className='text-center -mt-3 dark:text-white'><br /><span className='font-semibold'>Author Name</span> : {books?.author_name}</h2>
+                                <h2 className='text-center mt-3 dark:text-white'> <span className='font-semibold '>Category:</span> {books?.bookCategory}  </h2>
                                 </div>
-                                </div>
-                                <div className='flex justify-center'>
+                                <div className='flex justify-center my-3'>
                                 <Rating className='rating' name="rating " defaultValue={books?.ratings} precision={0.5} readOnly />
                                 </div>
                                  <div className='flex flex-col md:flex-row gap-4  mb-5 mt-2 items-center justify-center'>
