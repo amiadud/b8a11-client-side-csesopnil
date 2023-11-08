@@ -36,8 +36,8 @@ const BookDetails = () => {
       const BookId = bookdata._id
       const userID = user.uid
       const qBooks = bookdata.qBooks - 1
-      const UserName = user.displayName
-      const UserEmail = user.email
+      const UserName = user.Username
+      const UserEmail = user.userEmail
       const bookName = bookdata.bookName
       const bookCategory = bookdata.bookCategory
       const BookPhoto = bookdata.photoUrl
@@ -164,8 +164,18 @@ const BookDetails = () => {
             </TEModalHeader>
             {/* <!--Modal body--> */}
             <TEModalBody>
-            <h2 className='dark:text-white'>Name: {user?.displayName}</h2>
-            <h2 className='dark:text-white'>Email: {user?.email}</h2>
+            <div className="form-control">
+            <label className="label">
+              <span className="label-text dark:text-white">Name</span>
+            </label>
+            <input type="text" defaultValue={user?.displayName} className="input input-bordered" readOnly />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text dark:text-white">Email</span>
+            </label>
+            <input type="text" defaultValue={user?.email} className="input input-bordered" readOnly />
+          </div>
             <form onSubmit={AddToBorrow } action="">
             <div className="form-control">
             <label className="label">
@@ -205,7 +215,6 @@ const BookDetails = () => {
         </TEModalDialog>
       </TEModal>
     </div>
-<ToastContainer/>
         </>
     );
 };

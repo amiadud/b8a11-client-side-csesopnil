@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
@@ -10,12 +10,20 @@ const Addbook = () => {
 
   const { user } = useAuth()
 
-  const [CategoryData, setCategoryData] = useState([''])
+  const [CategoryData, setCategoryData] = useState([])
+  console.log(CategoryData);
 
-  axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category', {
-    withCredentials: true,
-  })
-  .then(res => setCategoryData(res.data))
+  useEffect( ()=> {
+    fetch('https://b8a11-server-side-csesopnil.vercel.app/book-category', {
+    })
+    .then(res => res.json())
+    .then(data => setCategoryData(data))
+  },[])
+
+  // axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category', {
+  //   withCredentials: true,
+  // })
+  // .then(res => setCategoryData(res.data))
 
   const handleAddBook = (event) => {
     event.preventDefault();
@@ -135,7 +143,6 @@ try {
     </div>
   </div>
 </div>
-<ToastContainer/>
         </div>
         </>
     );

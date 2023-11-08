@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner';
 import axios from 'axios';
@@ -10,8 +10,14 @@ const Home = () => {
 
     const [CategoryData, setCategoryData] = useState([])
     
-    axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category').then(res => setCategoryData(res.data))
+    // axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category').then(res => setCategoryData(res.data))
     
+    useEffect( ()=> {
+        fetch('https://b8a11-server-side-csesopnil.vercel.app/book-category', {
+        })
+        .then(res => res.json())
+        .then(data => setCategoryData(data))
+      },[])
     
     return (
         <div className='max-w-7xl mx-auto'>
