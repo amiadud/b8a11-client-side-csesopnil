@@ -86,7 +86,7 @@ const Borrowedbook = () => {
             <td className="capitalize "><Link className="hover:text-emerald-600" to={`/books/${borrowed?.bookCategory}`}>{borrowed?.bookCategory}</Link></td>
             <td className="capitalize ">{borrowed?.borrowDate}</td>
             <td className="capitalize ">{borrowed?.returnDate}</td>
-            <td><button onClick={()=> handleBorrowDelete(borrowed)} className="btn outline-none hover:bg-gray-700 bg-red-600 text-white">Return</button></td>
+            <td><button onClick={()=> handleBorrowDelete(borrowed)} className="btn outline-none hover:bg-gray-700 bg-red-600 text-white">Return</button> </td>
           </tr> 
 
     )

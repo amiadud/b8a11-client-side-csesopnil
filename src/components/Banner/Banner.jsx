@@ -6,7 +6,7 @@ const Banner = () => {
         <div
         data-aos="zoom-in"
         data-aos-duration="500"
-         className=" dark:bg-slate-800 mx-2 md:min-h-16 hover:shadow-none outline-none shadow-md rounded-md bg-base-200">
+         className=" dark:bg-slate-800 dark:shadow-slate-500 mx-2 md:min-h-16 hover:shadow-none outline-none shadow-md rounded-md bg-base-200">
   <div className="hero-content mx-10 flex-col lg:flex-row-reverse">
     <img src="https://imgdb.net/storage/uploads/05ff6d0facf9606e780902835839b646ab13650d504b9f9e75b20015ef3cb0c2.png" className="md:max-w-xl rounded-lg " />
     <div>

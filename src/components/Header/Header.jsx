@@ -27,7 +27,7 @@ const handleLogout = ()=> {
 }
 
     return (
-        <div className="navbar bg-base-100 mb-3  dark:bg-slate-800 dark:shadow-md rounded-md dark:rounded-md">
+        <div className="navbar bg-base-100 mb-3 dark:shadow-slate-500 dark:bg-slate-800 dark:shadow-md rounded-md dark:rounded-md">
   <div className="navbar-start ">
     <div className="dropdown ">
       <label tabIndex={0} className="btn btn-ghost lg:hidden dark:btn-secondary  ">
@@ -45,7 +45,7 @@ const handleLogout = ()=> {
     }
       </ul>
     </div>
-    <img className='w-36 ml-2 md:ml-2 dark:bg-white' src="./img/library_logo.png" alt="" />
+    <img className='w-36 ml-2 md:ml-2 dark:bg-white' src="https://imgdb.net/storage/uploads/3583fe88be6c51b8f69301700f265d2d5bc9d2e34d40bdf2ad47cb03f7da2b17.png" alt="" />
   </div>
   <div className="navbar-center  hidden lg:flex dark:text-white">
     <ul className="menu menu-horizontal  px-1">
