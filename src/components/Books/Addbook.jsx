@@ -20,11 +20,6 @@ const Addbook = () => {
     .then(data => setCategoryData(data))
   },[])
 
-  // axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category', {
-  //   withCredentials: true,
-  // })
-  // .then(res => setCategoryData(res.data))
-
   const handleAddBook = (event) => {
     event.preventDefault();
     const form = event.target
@@ -52,7 +47,7 @@ try {
   .then(data => {
     form.reset()
     console.log(data);
-    if(data.acknowledged == true) {
+    if(data.data.acknowledged == true) {
 
       toast.success('Added Book successfully')
     }
