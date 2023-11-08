@@ -24,12 +24,19 @@ const Home = () => {
                 <div className='relative'>
                 <h2 className=' text-3xl font-semibold mt-4  dark:text-white text-center'>Book Category </h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 lg:grid-cols-4 my-4 items-center">
+                <div  className="grid grid-cols-2 md:grid-cols-3 gap-2 lg:grid-cols-4 my-4 items-center">
                 {
                     CategoryData?.map(Category => <>
-                    <div className='border dark:text-white hover:shadow-none hover:underline  shadow-md rounded-md px-2 py-2'>
+                    <div 
+                    data-aos="flip-left"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1000" 
+                    
+                    className='border dark:text-white hover:shadow-none  shadow-md rounded-md px-2 py-2'>
                        <Link to={`/books/${Category.Category_Name}`}><img className='scale-90 w-full rounded-lg transition-all' src={Category.Category_Image} alt="" /></Link>
-                       <Link to={`/books/${Category.Category_Name}`}><h2 className=' text-lg text-center capitalize'>{Category.Category_Name}</h2></Link>
+                       <h2 className=' text-lg text-center capitalize'>{Category.Category_Name}</h2>
+                       <div className='flex justify-center'><Link to={`/books/${Category.Category_Name}`}><button className=' btn btn-sm btn-neutral dark:hover:btn-accent dark:hover:text-white hover:btn-secondary border-none my-2 dark:text-black text-white hover:text-white dark:bg-slate-50  rounded-2xl outline-none capitalize'>Explore</button></Link></div>
+                       
                 </div>
                 
                     </>)

@@ -52,21 +52,25 @@ const Borrowedbook = () => {
       <title>Borrowed Books List  | Library</title>
     </Helmet>
         <div className="max-w-7xl mx-auto">
-        <table width="100%" className="  md:text-white ">
-  <thead className=" bg-white text-black font-medium dark:text-white dark:border-neutral-500 dark:bg-neutral-800">
-    <tr className=" border bg-slate-800 dark:bg-white dark:text-black text-white dark:border-none ">
-      <th className=" py-2 "> Image</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Borrow Date</th>
-      <th>Return Date</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    {
+        <div class="flex flex-col overflow-x-auto">
+  <div class="sm:-mx-6 lg:-mx-8">
+    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+      <div class="overflow-x-auto border ">
+        <table class="min-w-full text-left text-sm font-light">
+          <thead class="bg-neutral-50 font-medium dark:border-neutral-500 dark:text-neutral-800">
+            <tr>
+              <th scope="col" class="px-6 py-4">Image</th>
+              <th scope="col" class="px-6 py-4">Name</th>
+              <th scope="col" class="px-6 py-4">Category</th>
+              <th scope="col" class="px-6 py-4">Borrowed Date</th>
+              <th scope="col" class="px-6 py-4">Return Date</th>
+              <th scope="col" class="px-6 py-4">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          {
       Data.length > 0 ?  Data.map( borrowed => 
-      <tr className="border-b text-black dark:text-black transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 border-t-2  dark:bg-white">
+      <tr className="border-b dark:text-white dark:border-neutral-500">
             <td ><Link to={`/book-details/${borrowed?.BookId}`}><img className="w-[50px] py-2" src={borrowed.BookPhoto} alt="" /></Link></td>
             <td className="capitalize "><Link className="hover:text-emerald-600 " to={`/book-details/${borrowed?.BookId}`}>{borrowed?.bookName}</Link></td>
             <td className="capitalize "><Link className="hover:text-emerald-600" to={`/books/${borrowed?.bookCategory}`}>{borrowed?.bookCategory}</Link></td>
@@ -78,8 +82,13 @@ const Borrowedbook = () => {
     )
     : <><h2 className="text-xl  text-black my-2">Not Available</h2></>
     }
-  </tbody>
-</table>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
         </div>
         <ToastContainer/>
         </>

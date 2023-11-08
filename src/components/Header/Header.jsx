@@ -49,13 +49,13 @@ const handleLogout = ()=> {
   </div>
   <div className="navbar-center  hidden lg:flex dark:text-white">
     <ul className="menu menu-horizontal  px-1">
-    <li className='mr-2 border rounded-lg dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-md'><NavLink to="/">Home</NavLink></li>
+    <li className='mr-2 border rounded-2xl dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-2xl'><NavLink to="/">Home</NavLink></li>
 
     {
       user ? <>
-    <li className='mr-2 border rounded-lg dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-md'><NavLink to="/add-book">Add Book</NavLink></li>
-    <li className='mr-2 border dark:outline-none dark:border-none rounded-lg dark:text-black dark:bg-slate-50 dark:rounded-md'><NavLink to="/all-books">All Books</NavLink></li>
-    <li className='mr-2 border rounded-lg dark:text-black dark:bg-slate-50 dark:rounded-md'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
+    <li className='mr-2 border rounded-2xl dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-2xl'><NavLink to="/add-book">Add Book</NavLink></li>
+    <li className='mr-2 border dark:outline-none dark:border-none rounded-2xl dark:text-black dark:bg-slate-50 dark:rounded-2xl'><NavLink to="/all-books">All Books</NavLink></li>
+    <li className='mr-2 border  dark:border-none dark:outline-none rounded-2xl dark:text-black dark:bg-slate-50 dark:rounded-2xl'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
     </>
     : <></>
     }

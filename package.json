@@ -15,6 +15,7 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/material": "^5.14.16",
     "@react-pdf-viewer/core": "^3.7.0",
+    "aos": "^2.3.4",
     "axios": "^1.6.0",
     "firebase": "^10.5.2",
     "localforage": "^1.10.0",

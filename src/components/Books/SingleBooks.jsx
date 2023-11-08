@@ -22,7 +22,7 @@ const SingleBooks = () => {
             <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
                         {
                             singleBooks.map(books => 
-                                <div className='border hover:shadow-none shadow-md rounded-md mt-4  '>
+                                <div data-aos="zoom-in-up" className='border hover:shadow-none shadow-md rounded-md mt-4  '>
                                 <div className='hover:underline'>
                                 <Link to={`/book-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>
                                 <Link to={`/book-details/${books?._id}`}><h2 className='  dark:text-white text-center scale-90 text-xl font-semibold'>{books?.bookName}</h2></Link>

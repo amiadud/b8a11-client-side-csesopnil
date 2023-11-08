@@ -22,11 +22,13 @@ const HomeBooks = () => {
 
     return (
         <>
-        <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
+        <div  className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
         
                         {
                             availableData.map(books => 
-                                <div className='border hover:shadow-none  shadow-md rounded-md mt-4  '>
+                                <div data-aos="flip-right"
+                                data-aos-easing="ease-out-cubic"
+                                data-aos-duration="1000" className='border hover:shadow-none  shadow-md rounded-md mt-4  '>
                                 <div className='hover:underline'>
                                 <Link to={`/book-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>
                                 <Link to={`/book-details/${books?._id}`}><h2 className='text-center scale-90 text-xl font-semibold  dark:font-semibold  dark:text-white'>{books?.bookName}</h2></Link>
@@ -54,7 +56,8 @@ const HomeBooks = () => {
         <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
                         {
                             fantacyBook.map(books => 
-                                <div className='border hover:shadow-none shadow-md rounded-md mt-4  '>
+                                <div data-aos="flip-up"
+                                data-aos-duration="1100"  className='border hover:shadow-none shadow-md rounded-md mt-4  '>
                                 <div className='hover:underline'>
                                 <Link to={`/book-details/${books?._id}`}> <img className='scale-90 h-72 w-full transition-all mt-4' src={books?.photoUrl} alt="" title="" /></Link>
                                 <Link to={`/book-details/${books?._id}`}><h2 className='  dark:text-white text-center scale-90 text-xl font-semibold'>{books?.bookName}</h2></Link>
