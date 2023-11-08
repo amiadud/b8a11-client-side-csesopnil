@@ -12,8 +12,8 @@ const SocialLogin = () => {
         media()
         .then(res => {
             console.log(res.user);
-            toast.success("Login successfully!!");
             navigate("/")
+            toast.success("Login successfully!!"); 
         })
         .catch(err => {
             console.log(err.message);
@@ -56,8 +56,8 @@ const SocialLogin = () => {
                 </button>
               </TERipple>
               </div>
-        <ToastContainer />
         </>
+        
     );
 };
 

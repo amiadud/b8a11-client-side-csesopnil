@@ -24,10 +24,9 @@ const Login = () => {
     loginUser(email, password)
     .then(result => {
       setTimeout(() => {
-        navigate('/') 
-        
+        toast.success("Login successful!!")
       }, 200);
-      toast.success("Login successful!!")
+      navigate('/') 
       console.log(result.user);
     })
     .catch(err => {

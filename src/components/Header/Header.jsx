@@ -27,7 +27,7 @@ const handleLogout = ()=> {
 }
 
     return (
-        <div className="navbar bg-base-100 mb-3 dark:border dark:bg-slate-800 dark:shadow-md rounded-md dark:rounded-md">
+        <div className="navbar bg-base-100 mb-3  dark:bg-slate-800 dark:shadow-md rounded-md dark:rounded-md">
   <div className="navbar-start ">
     <div className="dropdown ">
       <label tabIndex={0} className="btn btn-ghost lg:hidden dark:btn-secondary  ">
@@ -39,7 +39,7 @@ const handleLogout = ()=> {
       user ? <>
     <li className='mr-2  dark:hover:text-white'><NavLink to="/add-book">Add Book</NavLink></li>
     <li className='mr-2 dark:text-white'><NavLink to="/all-books">All Books</NavLink></li>
-    <li className='mr-2 dark:text-white'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
+    <li className='mr-2 dark:text-white'><NavLink to={`borrow-books/`}>Borrowed Books</NavLink></li>
     </>
     : <></>
     }
@@ -55,7 +55,7 @@ const handleLogout = ()=> {
       user ? <>
     <li className='mr-2 border rounded-2xl dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-2xl'><NavLink to="/add-book">Add Book</NavLink></li>
     <li className='mr-2 border dark:outline-none dark:border-none rounded-2xl dark:text-black dark:bg-slate-50 dark:rounded-2xl'><NavLink to="/all-books">All Books</NavLink></li>
-    <li className='mr-2 border  dark:border-none dark:outline-none rounded-2xl dark:text-black dark:bg-slate-50 dark:rounded-2xl'><NavLink to={`borrow-books/${user?.uid}`}>Borrowed Books</NavLink></li>
+    <li className='mr-2 border  dark:border-none dark:outline-none rounded-2xl dark:text-black dark:bg-slate-50 dark:rounded-2xl'><NavLink to={`borrow-books/`}>Borrowed Books</NavLink></li>
     </>
     : <></>
     }
@@ -90,7 +90,7 @@ const handleLogout = ()=> {
   <button onClick={changeTheme}>
      { mode === 'dark' ? <MdDarkMode className='text-2xl ml-2 dark:text-white'/> :  <MdLightMode className='text-2xl ml-2' />  }
 </button>
-  <ToastContainer/>
+<ToastContainer />
 </div>
     );
 };

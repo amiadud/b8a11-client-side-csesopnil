@@ -21,6 +21,7 @@ const BookDetails = () => {
 
     const [showModal, setShowModal] = useState(false);
     const {user} = useAuth()
+    console.log(user);
     const id = useParams()
     
     const bookdata = useLoaderData()
@@ -34,16 +35,15 @@ const BookDetails = () => {
       event.preventDefault();
       const form = event.target
       const BookId = bookdata._id
-      const userID = user.uid
       const qBooks = bookdata.qBooks - 1
-      const UserName = user.Username
-      const UserEmail = user.userEmail
+      const UserName = user.displayName
+      const email = user.email
       const bookName = bookdata.bookName
       const bookCategory = bookdata.bookCategory
       const BookPhoto = bookdata.photoUrl
       const borrowDate = form.borrowDate.value
       const returnDate = form.returnDate.value
-      const borrowData = {UserName,BookId, userID, qBooks, UserEmail, bookName, bookCategory, BookPhoto, borrowDate, returnDate }
+      const borrowData = {UserName,BookId, email, qBooks, bookName, bookCategory, BookPhoto, borrowDate, returnDate }
       console.log(borrowData);
 
           
@@ -96,16 +96,16 @@ const BookDetails = () => {
       <title>{bookdata?.bookName} | {bookdata?.author_name} | Library</title>
     </Helmet>
         <div className='grid md:grid-cols-4 '>
-            <div className=' flex justify-center items-center mr-8    mb-6'>
+            <div className=' flex justify-center items-center mr-8 mb-6'>
                 <div >
                     <div className='w-full mb-6 ml-0 md:ml-2 '>
                     <img src={bookdata?.photoUrl} alt={bookdata?.bookName} title={bookdata?.bookName} />
                     </div>
                     <div className='flex justify-center gap-4'>
                    
-                    <button onClick={() => setShowModal(true)} className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 text-white' disabled={bookdata?.qBooks === 0}>Borrow</button >
+                    <button onClick={() => setShowModal(true)} className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-cyan-500 dark:bg-orange-400 dark:outline-none dark:border-none dark:shadow dark:hover:shadow-zinc-200 text-white dark:hover:bg-green-500' disabled={bookdata?.qBooks === 0}>Borrow</button >
                     
-                    <Link to={`/read-book/${bookdata._id}`}> <button className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 text-white'>Read</button></Link>
+                    <Link to={`/read-book/${bookdata._id}`}> <button className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-white text-black dark:shadow dark:hover:shadow-slate-400'>Read</button></Link>
                     </div>
                 </div>
             </div>

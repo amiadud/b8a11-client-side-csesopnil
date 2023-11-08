@@ -3,11 +3,21 @@ import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import useAuth from '../../hooks/useAuth';
 
 const Borrowedbook = () => {
-    const borrowedData = useLoaderData()
 
-    const [Data, setData] = useState(borrowedData);
+  const {user} = useAuth();
+
+    useEffect(()=> {
+      fetch(`https://b8a11-server-side-csesopnil.vercel.app/borrow-books?email=${user?.email}`,{
+        credentials: "include"
+      })
+      .then(res => res.json())
+      .then(data => setData(data))
+    },[])
+
+    const [Data, setData] = useState(['']);
 
     const handleBorrowDelete = (book)=> {
 

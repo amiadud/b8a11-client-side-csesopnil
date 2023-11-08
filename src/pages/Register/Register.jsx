@@ -66,7 +66,7 @@ const Register = () => {
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
             <form onSubmit={handleRegister}>
               {/* <!-- Username input --> */}
-              <h2 className="text-4xl my-3 font-semibold">Registration Now !!</h2>
+              <h2 className="text-4xl my-3 font-semibold dark:text-white">Registration Now !!</h2>
               <TEInput
                 type="text"
                 name="username"
@@ -111,7 +111,7 @@ const Register = () => {
                     id="terms"
                   />
                   <label
-                    className="inline-block font-semibold pl-[0.15rem] hover:cursor-pointer"
+                    className="inline-block dark:text-white font-semibold pl-[0.15rem] hover:cursor-pointer"
                     htmlFor="terms"
                   >
                     Terms and conditions
@@ -131,7 +131,7 @@ const Register = () => {
                 </TERipple>
 
                 {/* <!-- Register link --> */}
-                <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
+                <p className="mb-0 mt-2 pt-1 dark:text-white text-sm font-semibold">
                   Have an account?{" "}
                   <Link to='/login' className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">Login</Link>
                 </p>
@@ -141,7 +141,6 @@ const Register = () => {
         </div>
       </div>
 </div>
-<ToastContainer/>
             
         </>
     );
