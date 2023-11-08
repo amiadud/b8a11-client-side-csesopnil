@@ -80,8 +80,8 @@ const Borrowedbook = () => {
           <tbody>
           {
       Data.length > 0 ?  Data.map( borrowed => 
-      <tr className=" text-center dark:text-white dark:border-neutral-500">
-            <td className="capitalize flex justify-center border-r botft "><Link to={`/book-details/${borrowed?.BookId}`}><img className="w-[50px] py-2" src={borrowed.BookPhoto} alt="" /></Link></td>
+      <tr className=" text-center border-b dark:text-white dark:border-neutral-500">
+            <td className="capitalize  flex justify-center border-r botft "><Link to={`/book-details/${borrowed?.BookId}`}><img className="w-[50px] py-2" src={borrowed.BookPhoto} alt="" /></Link></td>
             <td className="capitalize border-r text-center"><Link className="hover:text-emerald-600 " to={`/book-details/${borrowed?.BookId}`}>{borrowed?.bookName}</Link></td>
             <td className="capitalize border-r"><Link className="hover:text-emerald-600" to={`/books/${borrowed?.bookCategory}`}>{borrowed?.bookCategory}</Link></td>
             <td className="capitalize border-r">{borrowed?.borrowDate}</td>
