@@ -80,7 +80,7 @@ const Borrowedbook = () => {
           </tr> 
 
     )
-    : <><h2 className="text-xl  text-black my-2">Not Available</h2></>
+    : <><h2 className="text-xl dark:text-white text-black my-2">Not Available</h2></>
     }
           </tbody>
         </table>
