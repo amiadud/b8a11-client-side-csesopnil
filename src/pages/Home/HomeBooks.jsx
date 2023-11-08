@@ -22,7 +22,7 @@ const HomeBooks = () => {
 
     return (
         <>
-        <div  className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
+        <div  className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 my-4 '>
         
                         {
                             availableData.map(books => 
@@ -51,7 +51,7 @@ const HomeBooks = () => {
         </div>
         <h2 className='text-center text-2xl pt-3 font-semibold  dark:text-white'>Fantasy Books List</h2>
         <p className='text-center mt-2  dark:text-white'>Best of Fantasy Books.</p>
-        <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
+        <div className='grid grid-cols-2 md:grid-cols-3 mx-3 lg:grid-cols-4 gap-2 my-4 '>
                         {
                             fantacyBook.map(books => 
                                 <div data-aos="flip-up"
