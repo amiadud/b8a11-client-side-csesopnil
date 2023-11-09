@@ -29,7 +29,7 @@ const AllBooks = () => {
         <div className='flex justify-center'>
         <button onClick={handleFilter} className='btn btn-sm dark:text-black dark:bg-green-300 dark:outline-none dark:border-none'>Filter (Available books)</button>
         </div>
-        <div className='grid grid-cols-2 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
+        <div className='grid grid-cols-1 md:grid-cols-3 mx-2 lg:grid-cols-4 gap-2 my-4 '>
         
                         {
                             allbooks.map(books => 

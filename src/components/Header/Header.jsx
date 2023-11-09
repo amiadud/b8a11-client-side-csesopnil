@@ -35,14 +35,9 @@ const handleLogout = ()=> {
       </label>
       <ul tabIndex={0} className="menu bg-white dark:bg-zinc-500 dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52">
       <li className='mr-2 dark:text-white '><NavLink to="/">Home</NavLink></li>
-      {
-      user ? <>
     <li className='mr-2  dark:hover:text-white'><NavLink to="/add-book">Add Book</NavLink></li>
     <li className='mr-2 dark:text-white'><NavLink to="/all-books">All Books</NavLink></li>
     <li className='mr-2 dark:text-white'><NavLink to={`borrow-books/`}>Borrowed Books</NavLink></li>
-    </>
-    : <></>
-    }
       </ul>
     </div>
     <img className='w-36 ml-2 md:ml-2 dark:bg-white' src="https://imgdb.net/storage/uploads/3583fe88be6c51b8f69301700f265d2d5bc9d2e34d40bdf2ad47cb03f7da2b17.png" alt="" />
@@ -50,15 +45,9 @@ const handleLogout = ()=> {
   <div className="navbar-center  hidden lg:flex dark:text-white">
     <ul className="menu menu-horizontal  px-1">
     <li className='mr-2 border rounded-2xl dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-2xl'><NavLink to="/">Home</NavLink></li>
-
-    {
-      user ? <>
     <li className='mr-2 border rounded-2xl dark:text-black dark:outline-none dark:border-none dark:bg-slate-50 dark:rounded-2xl'><NavLink to="/add-book">Add Book</NavLink></li>
     <li className='mr-2 border dark:outline-none dark:border-none rounded-2xl dark:text-black dark:bg-slate-50 dark:rounded-2xl'><NavLink to="/all-books">All Books</NavLink></li>
     <li className='mr-2 border  dark:border-none dark:outline-none rounded-2xl dark:text-black dark:bg-slate-50 dark:rounded-2xl'><NavLink to={`borrow-books/`}>Borrowed Books</NavLink></li>
-    </>
-    : <></>
-    }
 
     </ul>
   </div>

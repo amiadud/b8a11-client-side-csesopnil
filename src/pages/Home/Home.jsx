@@ -4,6 +4,8 @@ import Banner from '../../components/Banner/Banner';
 import axios from 'axios';
 import HomeBooks from './HomeBooks';
 import { Helmet } from 'react-helmet';
+import BookReview from '../CustomerReview/CustomerReview';
+import CustomerReview from '../CustomerReview/CustomerReview';
 
 const Home = () => {
 
@@ -30,9 +32,9 @@ const Home = () => {
                 <div className='relative'>
                 <h2 className=' text-3xl font-semibold mt-4  dark:text-white text-center'>Book Category </h2>
                 </div>
-                <div  className="grid grid-cols-2 md:grid-cols-3 gap-2 lg:grid-cols-4 my-4 items-center">
+                <div  className="grid grid-cols-1 md:grid-cols-2 gap-2 lg:grid-cols-4 my-4 items-center">
                 {
-                    CategoryData?.map(Category => <>
+                    CategoryData.map(Category => <>
                     <div 
                     data-aos="flip-left"
                     data-aos-easing="ease-out-cubic"
@@ -51,8 +53,9 @@ const Home = () => {
 
             </div>
         </div>
-        <h2 className='text-2xl text-center font-semibold  dark:text-white'>All Books</h2>
+        <h2 className='text-2xl text-center font-semibold  dark:text-white'>Top Popular Books</h2>
         <HomeBooks/>
+    <CustomerReview/>
         </div>
     );
 };

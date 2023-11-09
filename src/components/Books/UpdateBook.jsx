@@ -1,6 +1,6 @@
 import { Rating } from '@mui/material';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -71,10 +71,11 @@ const UpdateBook = () => {
           <label className="label">
             <span className="label-text dark:text-white">Book Category</span>
           </label>
-            <select className='input input-bordered' name="bookCategory" id="">
+            <select className='input input-bordered' name="bookCategory">
+            <option  disabled selected className="capitalize ">Select Category</option>
             {
-              CategoryData.map(BookCategory =>
-              <option className="capitalize " defaultValue={BookCategory.Category_Name}>{BookCategory.Category_Name}</option>
+              CategoryData.map((BookCategory) =>
+              <option className="capitalize " defaultValue={BookCategory.Category_Name}  >{BookCategory.Category_Name}</option>
               )
             }
             </select>

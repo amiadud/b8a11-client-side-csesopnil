@@ -22,10 +22,10 @@ const HomeBooks = () => {
 
     return (
         <>
-        <div  className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 my-4 '>
+        <div  className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-2 my-4 '>
         
                         {
-                            availableData.map(books => 
+                            availableData.slice(0,8).map(books => 
                                 <div data-aos="flip-right"
                                 data-aos-easing="ease-out-cubic"
                                 data-aos-duration="1000" className='border hover:shadow-none  shadow-md rounded-md mt-4  '>
@@ -51,7 +51,7 @@ const HomeBooks = () => {
         </div>
         <h2 className='text-center text-2xl pt-3 font-semibold  dark:text-white'>Fantasy Books List</h2>
         <p className='text-center mt-2  dark:text-white'>Best of Fantasy Books.</p>
-        <div className='grid grid-cols-2 md:grid-cols-3 mx-3 lg:grid-cols-4 gap-2 my-4 '>
+        <div className='grid grid-cols-1 md:grid-cols-3 mx-3 lg:grid-cols-4 gap-2 my-4 '>
                         {
                             fantacyBook.map(books => 
                                 <div data-aos="flip-up"
