@@ -44,6 +44,7 @@ const AllBooks = () => {
                                 </div>
                                 <div className='flex justify-center my-3'>
                                 <Rating className='rating' name="rating " defaultValue={books?.ratings} precision={0.5} readOnly />
+                                <p className='mx-4'>{books?.ratings ? books?.ratings : '0'}</p>
                                 </div>
                                  <div className='flex flex-col md:flex-row gap-4  mb-5 mt-2 items-center justify-center'>
                                  <Link to={`/books-update/${books?._id}`}><button className='border  w-full hover:shadow capitalize rounded-md md:px-3 py-2 mx-2 md:mx-2 dark:bg-zinc-600 dark:hover:bg-zinc-300 dark:hover:text-black bg-violet-600 hover:bg-violet-800 text-white'>Update</button></Link>

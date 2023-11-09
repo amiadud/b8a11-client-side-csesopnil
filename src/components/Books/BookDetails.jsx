@@ -115,8 +115,10 @@ const BookDetails = () => {
                 <p className='text-base dark:text-white'>Author Name: <span className='font-semibold'>{bookdata?.author_name}</span></p>
                 </div>
                 <hr />
-               <div className='flex gap-3'>
+               <div className='flex gap-3 '>
                <Rating className='rating' name="rating " defaultValue={bookdata?.ratings} precision={0.5} readOnly />
+               <p>{bookdata?.ratings ? bookdata?.ratings : '0'}</p>
+               -
                <h2 className='dark:text-white'>Category: <Link to={`/books/${bookdata?.bookCategory}`}><span className=' hover:link-primary'>{bookdata?.bookCategory}</span></Link></h2>
                </div>
                <hr />

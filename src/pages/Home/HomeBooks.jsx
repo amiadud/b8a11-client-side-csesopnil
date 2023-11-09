@@ -39,6 +39,7 @@ const HomeBooks = () => {
                                 </div>
                                 <div className='flex justify-center my-3'>
                                 <Rating className='rating' name="rating " defaultValue={books?.ratings} precision={0.5} readOnly />
+                                <p className='mx-2'>{books?.ratings ? books?.ratings : '0'}</p>
                                 </div>
                                  <div className='flex flex-col md:flex-row gap-4  mb-5 mt-2 items-center justify-center'>
                                  <Link to={`/book-details/${books?._id}`}> <button className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 dark:bg-slate-200 dark:text-black text-white'>Details</button></Link>
@@ -66,8 +67,9 @@ const HomeBooks = () => {
                                 <h2 className='text-center -mt-3  dark:text-white'><br /><span className='font-semibold'>Author Name</span> : {books?.author_name}</h2>
                                 </div>
                                 </div>
-                                <div className='flex justify-center'>
+                                <div className='flex justify-center '>
                                 <Rating className='rating' name="rating " defaultValue={books?.ratings} precision={0.5} readOnly />
+                                <p className='mx-2'>{books?.ratings ? books?.ratings : '0'}</p>
                                 </div>
                                  <div className='flex flex-col md:flex-row gap-4  mb-5 mt-2 items-center justify-center'>
                                  <Link to={`/book-details/${books?._id}`}> <button className='border hover:shadow capitalize rounded-md md:px-3 btn-sm md:btn-sm bg-violet-600 hover:bg-violet-800 dark:bg-slate-200 dark:text-black text-white'>Details</button></Link>

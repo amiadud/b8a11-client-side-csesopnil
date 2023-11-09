@@ -87,6 +87,7 @@ try {
             <span className="label-text dark:text-white">Book Category</span>
           </label>
             <select className='input input-bordered' name="bookCategory" id="">
+            <option  disabled selected className="capitalize ">Select Category</option>
             {
               CategoryData.map(BookCategory =>
               <option className="capitalize " value={BookCategory.Category_Name}>{BookCategory.Category_Name}</option>
