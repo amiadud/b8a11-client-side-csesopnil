@@ -10,7 +10,7 @@ const Borrowedbook = () => {
   const {user} = useAuth();
 
     useEffect(()=> {
-      fetch(`https://b8a11-server-side-csesopnil.vercel.app/borrow-books?email=${user?.email}`,{
+      fetch(`https://library-server-side-csesopnil.vercel.app/borrow-books?email=${user?.email}`,{
         credentials: "include"
       })
       .then(res => res.json())
@@ -24,7 +24,7 @@ const Borrowedbook = () => {
       
       try{
              
-        fetch(`https://b8a11-server-side-csesopnil.vercel.app/book-detail/${book.BookId}`, {
+        fetch(`https://library-server-side-csesopnil.vercel.app/book-detail/${book.BookId}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ const Borrowedbook = () => {
         .then(data => console.log(data))  
 
 
-      fetch(`https://b8a11-server-side-csesopnil.vercel.app/borrow-books/${book._id}`, {
+      fetch(`https://library-server-side-csesopnil.vercel.app/borrow-books/${book._id}`, {
             method: 'DELETE',
         })
       .then((res) => res.json())

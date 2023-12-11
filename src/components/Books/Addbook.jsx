@@ -14,7 +14,7 @@ const Addbook = () => {
   console.log(CategoryData);
 
   useEffect( ()=> {
-    fetch('https://b8a11-server-side-csesopnil.vercel.app/book-category', {
+    fetch('https://library-server-side-csesopnil.vercel.app/book-category', {
     })
     .then(res => res.json())
     .then(data => setCategoryData(data))
@@ -38,7 +38,7 @@ const Addbook = () => {
     console.log(bookData);
 
 try {
-  axios.post("https://b8a11-server-side-csesopnil.vercel.app/books", bookData, {
+  axios.post("https://library-server-side-csesopnil.vercel.app/books", bookData, {
     headers: {
       'Content-Type': 'application/json',
     },

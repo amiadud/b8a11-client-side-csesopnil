@@ -12,10 +12,10 @@ const Home = () => {
 
     const [CategoryData, setCategoryData] = useState([])
     
-    // axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category').then(res => setCategoryData(res.data))
+    // axios.get('https://library-server-side-csesopnil.vercel.app/book-category').then(res => setCategoryData(res.data))
     
     useEffect( ()=> {
-        fetch('https://b8a11-server-side-csesopnil.vercel.app/book-category', {
+        fetch('https://library-server-side-csesopnil.vercel.app/book-category', {
         })
         .then(res => res.json())
         .then(data => setCategoryData(data))

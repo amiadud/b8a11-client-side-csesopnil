@@ -11,7 +11,7 @@ const UpdateBook = () => {
     
     const [CategoryData, setCategoryData] = useState([])
 
-    axios.get('https://b8a11-server-side-csesopnil.vercel.app/book-category')
+    axios.get('https://library-server-side-csesopnil.vercel.app/book-category')
     .then(res => setCategoryData(res.data))
 
     const handleUpdateBook = (event) => {
@@ -30,7 +30,7 @@ const UpdateBook = () => {
         console.log(bookData);
         
 
-    fetch(`https://b8a11-server-side-csesopnil.vercel.app/book-details/${booksdetails._id}`, {
+    fetch(`https://library-server-side-csesopnil.vercel.app/book-details/${booksdetails._id}`, {
           method: 'PUT',
           headers: {
               'content-type': 'application/json'

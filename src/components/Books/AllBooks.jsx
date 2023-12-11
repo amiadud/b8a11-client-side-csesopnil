@@ -9,7 +9,7 @@ const AllBooks = () => {
     const [allbooks, setAllbooks] = useState([])
 
     useEffect( ()=> {
-        fetch(`https://b8a11-server-side-csesopnil.vercel.app/books`, {
+        fetch(`https://library-server-side-csesopnil.vercel.app/books`, {
             credentials: "include"
         })
         .then(res => res.json())

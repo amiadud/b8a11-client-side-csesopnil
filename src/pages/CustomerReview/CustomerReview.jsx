@@ -7,7 +7,7 @@ const CustomerReview = () => {
     console.log(customerData);
 
     useEffect( ()=> {
-        fetch('https://b8a11-server-side-csesopnil.vercel.app/customer-review')
+        fetch('https://library-server-side-csesopnil.vercel.app/customer-review')
         .then(res => res.json())
         .then(data => setCustomerData(data))
     },[])

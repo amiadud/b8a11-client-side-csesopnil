@@ -41,25 +41,25 @@ const Routes = createBrowserRouter([
             path: '/books/:cname',
             element:<SingleBooks/>,
             errorElement:<ErrorPage/>,
-            loader:({params})=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/books/${params?.cname}`)
+            loader:({params})=> fetch(`https://library-server-side-csesopnil.vercel.app/books/${params?.cname}`)
         },
         {
             path: '/book-details/:id',
             element:<PrivateRoutes><BookDetails/></PrivateRoutes>,
             errorElement:<ErrorPage/>,
-            loader:({params})=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/book-details/${params?.id}`)
+            loader:({params})=> fetch(`https://library-server-side-csesopnil.vercel.app/book-details/${params?.id}`)
         },
         {
             path: '/books-update/:id',
             element:<UpdateBook/>,
             errorElement:<ErrorPage/>,
-            loader:({params})=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/book-details/${params?.id}`)
+            loader:({params})=> fetch(`https://library-server-side-csesopnil.vercel.app/book-details/${params?.id}`)
         },
         {
             path: '/borrow-books/',
             element:<PrivateRoutes><Borrowedbook/></PrivateRoutes>,
             errorElement:<ErrorPage/>,
-            loader:()=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/borrow-books/`)
+            loader:()=> fetch(`https://library-server-side-csesopnil.vercel.app/borrow-books/`)
         },
         {
           path: '/login',
@@ -76,7 +76,7 @@ const Routes = createBrowserRouter([
     {
       path:"/read-book/:id",
       element:<ReadBook/>,
-      loader:({params})=> fetch(`https://b8a11-server-side-csesopnil.vercel.app/book-details/${params.id}`)
+      loader:({params})=> fetch(`https://library-server-side-csesopnil.vercel.app/book-details/${params.id}`)
     }
   ]);
 

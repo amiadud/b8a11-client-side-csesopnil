@@ -54,7 +54,7 @@ const BookDetails = () => {
     try{
 
 
-      fetch(`https://b8a11-server-side-csesopnil.vercel.app/book-detail/${bookdata._id}`, {
+      fetch(`https://library-server-side-csesopnil.vercel.app/book-detail/${bookdata._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const BookDetails = () => {
       .then((response) => response.json())
       .then(data => console.log(data))
       
-      fetch('https://b8a11-server-side-csesopnil.vercel.app/borrow-books', {
+      fetch('https://library-server-side-csesopnil.vercel.app/borrow-books', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
